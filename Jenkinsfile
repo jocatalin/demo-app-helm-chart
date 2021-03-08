@@ -2,16 +2,24 @@
 pipeline {
     stages {
         stage('Clone repository') {
-            checkout scm
+            steps{
+                checkout scm
+            }
         }
         stage('Build') {
-            docker.build("jocatalin/demo-app") 
+            steps {
+                docker.build("jocatalin/demo-app") 
+            } 
         }
         stage('Test image') {
-            echo 'Testing..'
+            steps {
+                echo 'Testing..'
+            }
         }
         stage('Deploy') {
-            echo 'Deploying....'
+            steps {
+                echo 'Deploying....'
+            }
         }
     }
 }
