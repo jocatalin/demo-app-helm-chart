@@ -1,7 +1,7 @@
 pipeline {
     agent any
-    def demo-app
     stages {
+        def demo-app
         stage('Build') {
             checkout scm
             echo 'Building..'
