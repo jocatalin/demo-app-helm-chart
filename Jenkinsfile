@@ -9,8 +9,8 @@ pipeline {
         }
         stage('Build') {
             steps {
-                script{
-                    def demo-app = docker.build("jocatalin/demo-app") 
+                script {
+                    def app = docker.build('jocatalin/demo-app') 
                 }
             } 
         }
