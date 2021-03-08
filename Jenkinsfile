@@ -1,21 +1,17 @@
 pipeline {
     agent any
-
+    def demo-app
     stages {
         stage('Build') {
-            steps {
-                echo 'Building..'
-            }
+            checkout scm
+            echo 'Building..'
+            demo-app = docker.build("jocatalin/demo-app") 
         }
-        stage('Test') {
-            steps {
-                echo 'Testing..'
-            }
+        stage('Test image') {
+            echo 'Testing..'
         }
         stage('Deploy') {
-            steps {
-                echo 'Deploying....'
-            }
+            echo 'Deploying....'
         }
     }
 }
